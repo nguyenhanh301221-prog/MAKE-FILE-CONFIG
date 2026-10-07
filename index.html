@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Make File Config</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="app">
+
+  <header>
+    <div>
+      <span class="badge">MAKE FILE CONFIG</span>
+      <h1>Config Builder</h1>
+      <p>Import → Analyze → Convert → Export</p>
+    </div>
+
+    <button id="themeBtn" class="icon-btn">☼</button>
+  </header>
+
+
+  <!-- SOURCE -->
+
+  <section class="panel">
+
+    <div class="section-title">
+      <span>01</span>
+      <h2>Source files</h2>
+    </div>
+
+    <label id="dropZone" class="drop-zone">
+
+      <input
+        id="fileInput"
+        type="file"
+        multiple
+        accept=".cpp,.cc,.c,.h,.hpp,.java,.kt,.xml,.json,.ini,.cfg,.conf,.dat,.txt"
+      >
+
+      <b>+ ADD FILE</b>
+
+      <small>
+        Chọn hoặc kéo file vào đây
+      </small>
+
+    </label>
+
+    <div id="fileList" class="file-list"></div>
+
+  </section>
+
+
+  <!-- ANALYSIS / OUTPUT -->
+
+  <section class="grid">
+
+    <div class="panel">
+
+      <div class="section-title">
+        <span>02</span>
+        <h2>Analysis</h2>
+      </div>
+
+      <div id="analysis" class="analysis empty">
+        Chưa có source.
+      </div>
+
+    </div>
+
+
+    <div class="panel">
+
+      <div class="section-title">
+        <span>03</span>
+        <h2>Output</h2>
+      </div>
+
+      <label>Format</label>
+
+      <select id="format">
+
+        <option value="xml">XML</option>
+        <option value="json">JSON</option>
+        <option value="ini">INI</option>
+        <option value="dat">DAT</option>
+        <option value="cfg">CFG</option>
+        <option value="conf">CONF</option>
+        <option value="raw">RAW</option>
+
+      </select>
+
+
+      <label class="check">
+
+        <input
+          id="pretty"
+          type="checkbox"
+          checked
+        >
+
+        Pretty output
+
+      </label>
+
+
+      <button
+        id="convertBtn"
+        class="primary"
+      >
+        CONVERT
+      </button>
+
+
+      <button
+        id="downloadBtn"
+        disabled
+      >
+        DOWNLOAD
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PREVIEW -->
+
+  <section class="panel">
+
+    <div class="section-title">
+
+      <span>04</span>
+
+      <h2>Preview</h2>
+
+    </div>
+
+
+    <textarea
+      id="preview"
+      spellcheck="false"
+      placeholder="Converted file will appear here..."
+    ></textarea>
+
+
+    <div
+      class="status"
+      id="status"
+    >
+      Ready.
+    </div>
+
+  </section>
+
+</div>
+
+<script
+  type="module"
+  src="js/app.js"
+></script>
+
+</body>
+</html>
